@@ -1,0 +1,15 @@
+<div class="wrapper">
+    @for (item of configs; track $index) {
+    <div
+      ngClass="col-{{ responsiveService.columnCount | async }}"
+      *ngFor="let item of configs"
+    >
+      <div class="card" [routerLink]="[item.route]">
+        <span class="card-summery-title">{{ item.title }}</span>
+        <span class="card-summery-description">{{ item.description }}</span>
+      </div>
+    </div>
+}
+
+</div>
+  
