@@ -1,0 +1,37 @@
+@use '../tokens/config';
+@use '../layout/spacing.scss' as *;
+@use 'sass:map';
+
+$color: (
+  primary: #1e1e1e,
+  secondary: #f0f0f0,
+  
+);
+
+$font:(
+
+);
+
+$spaces: (
+  space-1: map.get($spacing, 1),
+  space-2: map.get($spacing, 2),
+  space-3: map.get($spacing, 3),
+  space-4: map.get($spacing, 4),
+  space-5: map.get($spacing, 5),
+  space-6: map.get($spacing, 6),
+  space-7: map.get($spacing, 7),
+  space-8: map.get($spacing, 8),
+  space-9: map.get($spacing, 9),
+  space-10: map.get($spacing, 10),
+  space-11: map.get($spacing, 11),
+  space-12: map.get($spacing, 12),
+  space-13: map.get($spacing, 13),
+  sidenav-width: 240px,
+  extra-small-breakpoint-width: 720px,
+  small-breakpoint-width: 959px,
+  content-padding-guides-side: 70px,
+  content-padding-sidenav: 50px,
+  content-padding-side-xs: 15px,
+);
+
+$layout-variables: map.merge($spaces, $color);

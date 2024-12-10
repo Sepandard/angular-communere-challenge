@@ -1,0 +1,8 @@
+
+@use './variable.scss' as variables;
+
+
+
+@function param($key, $fallback: null) {
+    @return variables.use($key, $fallback);
+}

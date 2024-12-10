@@ -1,0 +1,17 @@
+$space: 0.5rem;
+$spacing: (
+  0: 0,
+  1: $space * 0.25,
+  2: $space * 0.5,
+  3: $space * 0.75,
+  4: $space,
+  5: $space * 1.5,
+  6: $space * 2,
+  7: $space * 3,
+  8: $space * 4,
+  9: $space * 5,
+  10: $space * 6,
+  11: $space * 8,
+  12: $space * 10,
+  13: $space * 15,
+);

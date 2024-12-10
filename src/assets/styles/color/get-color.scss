@@ -1,0 +1,8 @@
+@use '../tokens/config';
+
+
+@function get-color($scheme) {
+    @return unquote(
+       'var(--#{config.$css-prefix}-#{$scheme})'
+     );
+ }

@@ -1,0 +1,9 @@
+@use '../color/get-color.scss';
+
+@mixin link() {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

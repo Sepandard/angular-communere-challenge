@@ -1,0 +1,67 @@
+@use '@angular/material' as mat;
+
+// Define a custom deep blue color palette
+$custom-deep-blue: (
+  50: #e3e8f9,
+  100: #c5d1f3,
+  200: #a1b6ed,
+  300: #7896e4,
+  400: #5379dc,
+  500: #1e40af, // Main primary color
+  600: #193899,
+  700: #152e82,
+  800: #10246b,
+  900: #08144c,
+  A100: #b0c3ff,
+  A200: #7d9dff,
+  A400: #4a77ff,
+  A700: #205aff,
+  contrast: (
+    50: black,
+    100: black,
+    200: black,
+    300: black,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: black,
+    A200: black,
+    A400: white,
+    A700: white,
+  )
+);
+$custom-gray: #f7faff;
+// Define a complementary accent color palette
+
+
+// Define Angular Material palettes
+$custom-primary: mat.define-palette($custom-deep-blue, 500, 400, 700);
+$custom-accent: mat.define-palette(mat.$blue-palette, 200, 200, 400);
+$custom-warn: mat.define-palette(mat.$red-palette);
+
+// Define the theme
+$custom-theme: mat.define-light-theme((
+  color: (
+    primary: $custom-primary,
+    accent: $custom-accent,
+    warn: $custom-warn,
+    background: $custom-gray,
+  ),
+));
+
+// Apply the theme globally
+@include mat.all-component-themes($custom-theme);
+
+.docs-primary-header {
+  background-color: mat.get-color-from-palette($custom-primary, 500); // Softer blue
+  color: mat.get-color-from-palette($custom-primary, 500); // Azure blue text
+
+  .mat-icon {
+    color: mat.get-color-from-palette($custom-primary, 50);
+  }
+
+}
+ 

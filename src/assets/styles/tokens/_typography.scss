@@ -1,0 +1,17 @@
+  $available-font : ('staoshi');
+  $font-size-root: 1em; // equals to 16px but if user changes font-size in browser setting, it will be adopted
+  $font: (
+    1 : 'VariableItalic' ,
+    2 : 'Light' ,
+    3 : 'LightItalic' ,
+    4 : 'Regular',
+    5 : 'Italic' ,
+    6 : 'Medium' ,
+    7 : 'MediumItalic' ,
+    8 : 'Bold',
+    9 : 'BoldItalic' ,
+    10:'Black',
+    11:'BlackItalic',
+
+);
+

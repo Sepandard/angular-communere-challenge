@@ -1,0 +1,28 @@
+
+@use '../tokens/config';
+
+
+@mixin generate($key, $value) {
+  --#{config.$css-prefix}-#{$key}: #{$value};
+}
+  
+
+@function use($key, $value: null) {
+    @if $value {
+      @return var(--#{config.$css-prefix}-#{$key}, $value);
+    } @else {
+      @return var(--#{config.$css-prefix}-#{$key});
+    }
+}
+  
+
+@mixin generate-variable($list) {
+    @if $list {
+      @each $name, $size in $list {
+         @include generate($name, $size);
+      }
+    } @else {
+      @error 'Something Wrong in Input List';
+    }
+}
+

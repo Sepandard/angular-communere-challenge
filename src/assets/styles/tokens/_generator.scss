@@ -1,0 +1,8 @@
+
+@use '../utils/variable';
+@use '../layout' as *;
+@use '../tokens/_global.scss' as *;
+
+:root {
+    @include variable.generate-variable($layout-variables);
+}
