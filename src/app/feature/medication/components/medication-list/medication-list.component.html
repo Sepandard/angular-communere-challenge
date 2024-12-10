@@ -1,0 +1,50 @@
+<div class="medication">
+  <mat-card class="medication-action">
+
+    @if (searchForm) {
+    <ng-container [formGroup]="searchForm">
+      <app-search-input formControlName="search" placeholder="Search Medication"></app-search-input>
+    </ng-container>
+    }
+
+    <button mat-flat-button color="primary" (click)="addData()" class="demo-button">Add Data</button>
+    
+</mat-card>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Medication Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="dosage">
+      <th mat-header-cell *matHeaderCellDef>Dosage</th>
+      <td mat-cell *matCellDef="let element">{{ element.dosage }} {{ element.unit }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="days">
+      <th mat-header-cell *matHeaderCellDef>Days</th>
+      <td mat-cell *matCellDef="let element">{{ element.days.join(', ') }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="times">
+      <th mat-header-cell *matHeaderCellDef>Times</th>
+      <td mat-cell *matCellDef="let element">{{ element.times.join(', ') }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="operator">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <mat-icon (click)="updateData(element)" fontIcon="more"></mat-icon>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

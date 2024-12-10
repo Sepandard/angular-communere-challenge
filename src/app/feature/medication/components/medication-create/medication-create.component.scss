@@ -1,0 +1,12 @@
+@use 'src/assets/styles/common.scss' as *;
+
+.medication-form {
+    display: flex;
+    flex-direction: column;
+    padding: param(space-8);
+    
+}
+
+mat-form-field {
+    padding: 3px;
+}
