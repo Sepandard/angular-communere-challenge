@@ -1,8 +1,10 @@
 export enum Unit {
-    Mg = 'mg',
-    Ml = 'ml',
+    Mg = 'Micrograms',
+    Ml = 'Milligrams',
     Tablet = 'tablet',
     Capsule = 'capsule',
+    Applications = 'Applications',
+    Drops = 'Drops',
   }
   
 
@@ -11,7 +13,7 @@ export enum Unit {
     name: string;
     dosage: number ;
     unit: Unit ;
-    days: string[]; // Array of selected days
-    times: string[]; // Array of times
+    days: string[]; 
+    times: string[]; 
   }
   
