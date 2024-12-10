@@ -24,7 +24,7 @@
     <div class="col-{{ columnCount }}">
       <h3>Days</h3>
       <mat-form-field appearance="outline">
-        <mat-select [formControlName]="'days'" multiple>
+        <mat-select formControlName="days" multiple>
           @for (day of daysOfWeek; track day) {
           <mat-option [value]="day">{{ day }}</mat-option>
           }

@@ -66,8 +66,6 @@ export class MedicationCreateComponent implements OnInit {
   }
 
   private patchData() {
-    console.log(this.data);
-
     if (this.data) {
       this.form.patchValue({ ...this.data });
       this.data.times.forEach((element) => {
@@ -80,10 +78,7 @@ export class MedicationCreateComponent implements OnInit {
     return this.form.get('times') as FormArray;
   }
 
-  get days(): FormArray<FormControl<boolean>> {
-    return this.form.get('days') as FormArray<FormControl<boolean>>;
-  }
-
+ 
   addTime(initialValue: string = ''): void {
     this.times.push(
       this.fb.group({
