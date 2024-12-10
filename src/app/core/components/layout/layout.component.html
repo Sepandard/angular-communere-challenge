@@ -1,0 +1,42 @@
+<div class="container">
+  <mat-toolbar
+    class="toolbar"
+    [ngClass]="{
+      'toolbar-mobile': (responsiveService.isSmallOrSmaller | async)
+    }"
+    color="primary"   
+    class="toolbar"
+  >
+    <button mat-icon-button routerLink="./">
+      <mat-icon fontIcon="emergency"></mat-icon>
+ 
+    </button>
+    <span
+    *ngIf="responsiveService.isLargeOrBigger | async"
+    class="app-name"
+    >{{ getProjectName() }}</span
+  >
+  </mat-toolbar>
+  <app-header (toggleSidenav)="sidenav.toggle()"></app-header>
+  <mat-sidenav-container>
+    <mat-sidenav
+    class='sidenav'
+    #sidenav
+    [opened]="(responsiveService.isXSmallScreen | async) === false"
+    [mode]="(responsiveService.isXSmallScreen | async) ? 'over' : 'side'"
+    [fixedInViewport]="responsiveService.isXSmallScreen | async"
+    [fixedTopGap]="(responsiveService.isXSmallScreen | async) ? 92 : 56"
+  >
+      <mat-nav-list>
+        <a mat-list-item [routerLink]="item.route" *ngFor="let item of navList">{{
+          item.title
+        }}</a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="wrapper">
+      <router-outlet></router-outlet>
+     </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
