@@ -6,7 +6,6 @@ import {
   Validators,
   ReactiveFormsModule,
   FormsModule,
-  FormControl,
 } from '@angular/forms';
 import { Medication, Unit } from '../../api/medication.model';
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';

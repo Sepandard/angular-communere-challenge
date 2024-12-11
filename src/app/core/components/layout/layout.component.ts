@@ -43,7 +43,7 @@ export class LayoutComponent {
   public readonly responsiveService = inject(ResponsiveLayoutService);
   private readonly title = inject(Title);
   private readonly router = inject(Router);
-  private readonly environment = inject(ENVIRONMENT_TOKEN);
+  private readonly environment = inject(ENVIRONMENT_TOKEN, {optional: true});
   private readonly parentInstance = inject(LayoutComponent, { optional: true, skipSelf: true });
   public navList = NAVIGATION_CONFIG;
 
@@ -62,6 +62,7 @@ export class LayoutComponent {
   }
 
   getProjectName() {
+    if(!this.environment) throw Error('Cannot found environment. Add environment in ENVIRONMENT_TOKEN injection token')
     return this.environment.projectName;
   }
 }
